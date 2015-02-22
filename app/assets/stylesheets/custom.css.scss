@@ -1,0 +1,100 @@
+body {
+  padding-top: 50px;
+  background-color: #f8f8f8;
+}
+
+//styling for devise login/registration page
+.devise {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .new_user {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .new_user .form-signin-heading,
+  .new_user .checkbox {
+    margin-bottom: 10px;
+  }
+  .new_user .checkbox {
+    font-weight: normal;
+    margin-left: 0;
+  }
+
+  #user_remember_me {
+    margin-left: 0;
+    margin-right: 5px;
+    position: static;
+  }
+  .new_user .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .new_user .form-control:focus {
+    z-index: 2;
+  }
+  .new_user input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .new_user input[type="password"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 10, /Users/lukasz/.rvm/gems/ruby-2.1.5@crm/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 10, /Users/lukasz/.rvm/gems/ruby-2.1.5@crm/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 10, /Users/lukasz/.rvm/gems/ruby-2.1.5@crm/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: auto;
+  }
+}
+
+.row {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.navbar-inverse {
+  background-color: #192124;
+  border-color: #090909;
+}
+
+.nav-view {
+  background-color: #313744;
+  color: #D5DDE0;
+  left: 0;
+  padding: 25px;
+}
+
+.add-account{
+  margin-top: 20px;
+}
+
+.delete {
+  margin-top: 20px;
+}
+
+.delete a {
+  color: red;
+}
