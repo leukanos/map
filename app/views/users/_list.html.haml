@@ -1,0 +1,28 @@
+.col-md-10.col-md-offset-1
+  - if current_user.admin?
+     #{link_to "+ dodaj użytkownika", new_user_path}
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Email
+        %th Imie i nazwisko
+        %th Telefon
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td
+            = link_to user.email, user
+          %td
+            = user.full_name
+          %td
+            = user.tel
+          - if current_user.admin?
+            %td
+              - user.roles.each do |role|
+                = role.to_s
+                ,
+            %td
+              = link_to "edytuj", edit_user_path(user)
+              = link_to "usuń", user, method: :delete, data: { confirm: "Jesteś pewien?" }, class: "usun"
+  - if current_user.admin?
+     #{link_to "+ dodaj użytkownika", new_user_path}
