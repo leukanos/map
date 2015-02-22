@@ -1,0 +1,25 @@
+%body
+  %header.navbar.navbar-fixed-top.navbar-inverse{:role => ""}
+    .navbar-inner
+      .container
+        %row
+          .col-md-3
+            = link_to "MAP", '/', class: "navbar-brand"
+          .col-md-9
+            - if signed_in?
+              %nav
+                %ul.nav.navbar-nav.navbar-right.navbar-top
+                  - if current_user.admin?
+                    %li= link_to 'admin', '#'
+                  %li= link_to "osoby", users_path
+                  %li= link_to "pomoc", '#'
+                  %li.dropdown
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                      = current_user.email
+                      %b.caret
+                    %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+                      - if current_user.admin?
+                        %li= link_to "profil", current_user
+                      %li= link_to "ustawienia", edit_user_path(current_user)
+                      %li.divider{:role => "presentation"}
+                      %li= link_to "wyloguj", destroy_user_session_path

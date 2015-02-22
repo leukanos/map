@@ -1,0 +1,10 @@
+.actions
+  .row
+    .col-md-3.col-xs-12
+      %h2= yield(:title)
+    .col-md-9.col-xs-12
+      %ul.nav.nav-pills.nav-justified.navbar-right.navbar-navigation
+        %li= nav_link('Aktywność', '#')
+        %li= nav_link('Projekt', '#')
+        %li= nav_link('Klient', '#')
+        %li= nav_link('Raporty', '#')

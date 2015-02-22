@@ -1,13 +1,15 @@
 = simple_form_for @user do |f|
   .col-md-5.col-md-offset-1
     - if current_user.admin?
-      = f.input :email, input_html: { class: "form-control input-sm" }, label: "email"
+      = f.input :email, input_html: { class: "form-control input-sm" }, label: "email", required: true
     = f.input :firstname, input_html: { class: "form-control input-sm" }, label: "imie", required: true
     = f.input :lastname, input_html: { class: "form-control input-sm" }, label: "nazwisko", required: true
     = f.input :tel, input_html: { class: "form-control input-sm" }, label: "telefon", required: false
     = f.input :limit, input_html: { class: "form-control input-sm" }, label: "Limit godzin", required: false
     - if current_user.admin?
-      = f.input :roles, collection: User.valid_roles, input_html: { class: 'input-sm', multiple: true, value: @user.roles }, label: 'role', required: true
+      = f.input :roles, collection: User.valid_roles,
+                input_html: { class: 'form-control input-sm', multiple: true, value: @user.roles },
+                label: 'role', required: true
   .col-md-5
     = f.input :password, input_html: { class: "form-control input-sm" }, label: "hasło", required: false
     = f.input :password_confirmation, input_html: { class: "form-control input-sm" }, label: "potwierdzenie hasła", required: false

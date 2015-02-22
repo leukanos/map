@@ -1,0 +1,16 @@
+.row
+  .col-md-12
+    = simple_form_for 'work_time', :html => { :class => 'form-inline' } do |f|
+      %table
+        %tr
+          %td= f.input :centrum_id, :collection => @centrum.collect{ |c| [c.symbol, c.id]}, :selected => session[:centrum_id], label_html: { size: 'auto', class: 'sr-only'}, input_html: { class: 'input-sm', placeholder: 'centrum'}
+          %td= f.input :project, :collection =>@project.collect{ |p| [p.akronim, p.project_id]}, :include_blank => 'Wybierz projekt', :selected => session[:project_id] , label_html: { class: 'sr-only'}, input_html: { size: 'auto', class: 'input-sm', placeholder: 'projekt'}
+          %td= f.input :sub_project, :collection=>@sub_project.collect{ |s| [s.akronim, s.id]} , :include_blank => '', :selected => session[:sub_project_id], label_html: { class: 'sr-only'}, input_html: { size: 'auto', class: 'input-sm', placeholder: 'sub projekt'}, required: false
+          - if controller_name == 'customers'
+            %td= f.input :customer_id, :collection=> @customer.collect{ |cus| [cus.akronim, cus.customer_id]}, :include_blank => 'Wybierz klienta', :selected => session[:customer_id], label_html: { class: 'sr-only'}, input_html: { size: 'auto', class: 'input-sm', placeholder: 'klient'}, required: true
+          - elsif controller_name == 'projects' || 'plans' || 'realizations'
+            %td= f.input :customer_id, :collection=> @customer ? [[@customer.akronim, @customer.id]] : [], :selected => session[:customer_id], label_html: { class: 'sr-only'}, input_html: { size: 'auto', class: 'input-sm', readonly: 'readonly', placeholder: 'klient'}, required: false, readonly: 'true'
+            :javascript
+              $('#work_time_customer_id').prop('readonly', true);
+          %td= f.button :submit, 'Pokaż', class: 'btn btn-sm btn-default'
+%hr/

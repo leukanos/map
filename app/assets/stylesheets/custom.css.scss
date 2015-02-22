@@ -98,3 +98,108 @@ body {
 .delete a {
   color: red;
 }
+
+.usun {
+  color: red;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#box {
+  min-height: 500px;
+  position: relative;
+  padding: 0 0 10px 0;
+  margin-bottom: 22px;
+  background: #fff;
+  box-shadow: 0px 0px 6px rgba(0,0,0,.2);
+  border-radius: 4px;
+}
+
+#main {
+  margin: 0 -15px 0;
+  padding: 18px 0px 9px 0px;
+  position: relative;
+  clear: both;
+  z-index: 2;
+
+}
+.row {
+  padding: 0 18px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #75ae1d;
+  border-color: #659e0d;
+  color: #fff !important;
+  &:hover {
+    background-color: #558e0d !important;
+  }
+}
+
+.actions {
+  margin: 0 18px 18px 18px;
+  padding: 18px 18px 8px 10px;
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  h2 {
+    border: 0;
+    margin: 0 0 8px 0;
+    padding: 0;
+    line-height: 34px;
+    font-size: 28px;
+    height: 34px;
+    display: block;
+    float: left;
+    color: #2B2927;
+  }
+}
+
+.nav li a {
+  color: #111;
+}
+
+.navbar-navigation {
+  position: relative;
+  top: -6px;
+}
+
+.navbar-top {
+  padding-right: 5px !important;
+  a{
+    padding-right: 5px !important;
+    padding-left:  5px !important;
+  }
+}
+
+.content {
+  padding: 0 18px;
+}
+
+#logotyp {
+  text-align: center;
+  h1{
+    margin-top: -20px;
+  }
+}
