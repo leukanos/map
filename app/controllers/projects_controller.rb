@@ -9,6 +9,13 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @project =  Project.new(project_params)
+    if @project.save
+      flash[:success] = 'Dodano projekt'
+      redirect_to projects_path
+    else
+      render :new
+    end
 
   end
 
@@ -29,5 +36,9 @@ class ProjectsController < ApplicationController
       flash[:danger] = 'Podczas usuwania występił błąd'
       redirect_to project_path
     end
+  end
+
+  def project_params
+    params.require(:project).permit(:short_name, :name, :assigned_to_id, :parent_id)
   end
 end
