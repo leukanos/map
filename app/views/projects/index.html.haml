@@ -27,3 +27,5 @@
                 edit_project_path(p), class: 'edit' if can? :edit, p
               = link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'),
                 project_path(p), method: :delete, data: { confirm: 'Jesteś pewien?' }, class: 'usun' if can? :delete, p
+    - if can? :create, Project
+      #{link_to "+ dodaj projekt", new_project_path}
