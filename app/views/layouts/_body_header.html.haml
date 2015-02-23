@@ -12,7 +12,6 @@
                   - if current_user.admin?
                     %li= link_to 'admin', admin_index_url
                   %li= link_to "osoby", users_path
-                  %li= link_to "pomoc", '#'
                   %li.dropdown
                     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                       = current_user.email

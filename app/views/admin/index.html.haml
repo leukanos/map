@@ -24,5 +24,7 @@
             %td= d.parent.andand.symbol
             %td= d.symbol
             %td
+              = link_to content_tag(:span, '', class: 'glyphicon glyphicon-edit'),
+                edit_admin_path(d), class: 'edit'
               = link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'),
                 admin_path(d), method: :delete, data: { confirm: 'Jesteś pewien?' }, class: 'usun'
