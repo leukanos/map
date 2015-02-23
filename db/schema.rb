@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222231848) do
+ActiveRecord::Schema.define(version: 20150223151237) do
 
   create_table "dictionaries", force: :cascade do |t|
     t.integer  "kind",       limit: 4
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20150222231848) do
 
   add_index "dictionaries", ["ancestry"], name: "index_dictionaries_on_ancestry", using: :btree
   add_index "dictionaries", ["kind"], name: "index_dictionaries_on_kind", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.string   "short_name",     limit: 25
+    t.string   "state",          limit: 255
+    t.date     "closing_date"
+    t.string   "ancestry",       limit: 255
+    t.integer  "assigned_to_id", limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                                                              null: false

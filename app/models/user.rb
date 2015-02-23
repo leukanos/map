@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   roles :admin, :manager, :user
 
+  has_many :assigned_projects, class_name: 'Project', foreign_key: :assigned_to_id
+
   def full_name
     "#{firstname} #{lastname}"
   end
