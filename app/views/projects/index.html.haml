@@ -1,2 +1,25 @@
 - provide(:title, 'Projekty')
 .row
+  .col-md-10.col-md-offset-1
+    - if can? :create, Project
+       #{link_to "+ dodaj projekt", new_project_path}
+    %table.table.table-hover
+      %thead
+        %tr
+          %th id
+          %th nazwa skrócona
+          %th nazwa
+          %th status
+          %th przypisany do
+          %th projekt nadrzędny
+          %th akcje
+      %tbody
+        - @projects.each do |p|
+          %tr
+            %td= p.id
+            %td= p.short_name
+            %td= p.name
+            %td= p.state
+            %td= p.assigned_to.andand.email
+            %td= p.parent.andand.shortname
+            %td
