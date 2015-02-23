@@ -1,0 +1,7 @@
+=simple_form_for @dictionary, url: admin_index_url do |f|
+  =f.input :kind, collection: collect_kinds, input_html: { class: "form-control input-sm" }
+  =f.input :parent, collection: collect_parents, input_html: { class: "form-control input-sm" }
+  =f.input :symbol, input_html: { class: "form-control input-sm" }
+  %hr
+  = f.button :submit, 'Zapisz', class: 'btn btn-success'
+  = link_to 'Anuluj', users_path, class: 'btn btn-sm btn-default'
