@@ -1,7 +1,7 @@
 class Dictionary < ActiveRecord::Base
   has_ancestry
 
-  scope :without_current, ->(current_id) {where('id <> ?', current_id)}
+  scope :without_current, ->(current_id) {where('id <> ?', current_id || 0)}
 
   validates_presence_of :kind, :symbol
 
