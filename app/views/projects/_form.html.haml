@@ -2,8 +2,9 @@
   .col-md-5.col-md-offset-1
     =f.input :short_name, input_html: { class: "form-control input-sm" }, label: 'Nazwa skrócona'
     =f.input :name, input_html: { class: "form-control input-sm" }, label: 'Nazwa'
-    =f.input :assigned_to, collection: collect_users , input_html: { class: "form-control input-sm" }, label: 'Przypisany do'
-    =f.input :parent, collection: collect_projects, input_html: { class: "form-control input-sm" }, label: 'Projekt nadrzędny'
+    =f.association :assigned_to, collection: collect_users , input_html: { class: "form-control input-sm" }, label: 'Przypisany do'
+    =f.input :parent, collection: collect_projects, input_html: { class: "form-control input-sm" }, label: 'Projekt nadrzędny',
+      selected: f.object.parent_id, :include_blank => true
     %hr
     = f.button :submit, 'Zapisz', class: 'btn btn-success'
     = link_to 'Anuluj', projects_path, class: 'btn btn-sm btn-default'
