@@ -18,12 +18,15 @@
             = user.full_name
           %td
             = user.tel
-          - if current_user.admin?
-            %td
+          %td
+            -if can? :manage, User
               - user.roles.each do |role|
                 = role.to_s
                 ,
-            %td
+            -else
+              \-
+          %td
+            -if can? :manage, User
               = link_to "edytuj", edit_user_path(user)
               = link_to "usuń", user, method: :delete, data: { confirm: "Jesteś pewien?" }, class: "usun"
   - if current_user.admin?

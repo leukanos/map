@@ -9,9 +9,6 @@
             - if signed_in?
               %nav
                 %ul.nav.navbar-nav.navbar-right.navbar-top
-                  - if current_user.admin?
-                    %li= link_to 'admin', admin_index_url
-                  %li= link_to "osoby", users_path
                   %li.dropdown
                     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                       = current_user.email
