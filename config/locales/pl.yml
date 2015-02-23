@@ -1,0 +1,6 @@
+pl:
+  enums:
+    dictionary:
+      kind:
+        form: 'forma'
+        activity: 'czynności'
