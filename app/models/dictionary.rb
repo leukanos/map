@@ -1,6 +1,8 @@
 class Dictionary < ActiveRecord::Base
   has_ancestry
 
+  scope :without_current, ->(current_id) {where('id <> ?', current_id)}
+
   validates_presence_of :kind, :symbol
 
   enum kind: [ :form, :activity ]
@@ -8,7 +10,7 @@ class Dictionary < ActiveRecord::Base
   def self.create_with_parent(params = {})
 
     parent_id = params.delete('parent')
-    parent = Dictionary.find(parent_id)
+    parent = Dictionary.find(parent_id) if parent_id
 
     @dictionary = Dictionary.new(params.merge(parent: parent))
     if @dictionary.save

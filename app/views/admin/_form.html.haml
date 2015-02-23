@@ -1,6 +1,6 @@
-=simple_form_for @dictionary, url: admin_index_url do |f|
+=simple_form_for @dictionary, url: url do |f|
   =f.input :kind, collection: collect_kinds, input_html: { class: "form-control input-sm" }, label: 'Rodzaj'
-  =f.input :parent, collection: collect_parents, input_html: { class: "form-control input-sm" }, label: 'Rodzic',
+  =f.input :parent_id, collection: collect_dictionary_parents(3), input_html: { class: "form-control input-sm" }, label: 'Rodzic',
     selected: f.object.parent_id, :include_blank => true
   =f.input :symbol, input_html: { class: "form-control input-sm" }
   %hr

@@ -34,7 +34,7 @@ class AdminController < ApplicationController
       redirect_to admin_index_path
     else
       flash[:danger] = 'Podczas dodawania występił błąd'
-      render :new
+      redirect_to new_admin_path
     end
   end
 
@@ -50,6 +50,6 @@ class AdminController < ApplicationController
   end
 
   def admin_params
-    params.require(:dictionary).permit(:kind, :symbol, :ancestry, :parent)
+    params.require(:dictionary).permit(:kind, :symbol, :ancestry, :parent_id)
   end
 end
