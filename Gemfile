@@ -28,7 +28,9 @@ gem 'haml'
 gem 'role_model'
 gem 'composite_primary_keys'
 gem 'bootstrap-will_paginate'
-
+gem 'ancestry'
+gem 'andand'
+# gem 'enum_help'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
