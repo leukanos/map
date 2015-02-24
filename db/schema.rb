@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223230158) do
+ActiveRecord::Schema.define(version: 20150224151717) do
 
   create_table "dictionaries", force: :cascade do |t|
     t.integer  "kind",       limit: 4
@@ -65,5 +65,17 @@ ActiveRecord::Schema.define(version: 20150223230158) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "work_times", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "project_id", limit: 4
+    t.integer  "form_id",    limit: 4
+    t.integer  "action_id",  limit: 4
+    t.date     "date"
+    t.decimal  "time",                   precision: 10
+    t.string   "comment",    limit: 255
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
 
 end
