@@ -18,7 +18,7 @@
             %td= f.input :action, collection: collect_work_time_activity, input_html: { class: "select2 input-sm" }, label: false
             %td= f.input :form, collection: collect_work_time_form, input_html: { class: "select2 input-sm" }, label: false
             %td= f.input :time, input_html: { class: "form-control input-sm" }, label: false
-            %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date" }, label: false
+            %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: false
             %td= f.input :comment, input_html: { class: "form-control input-sm" }, label: false
             %td= f.button :submit, '+', class: 'btn btn-success'
         -@work_times.each do |w|

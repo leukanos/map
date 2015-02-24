@@ -14,7 +14,10 @@
       .row
         .col-md-8.col-md-offset-2
           - flash.each do |key, value|
-            = content_tag(:div, value, class: "alert alert-#{key}")
+            %div{class: "alert alert-dismissible alert-#{key}"}
+              %button{type: 'button', class: 'close', :'data-dismiss' => 'alert', :'aria-label' => 'Close'}
+                %span &times;
+              =value
       #main
         #box
           / tymczasowo do utworzenia formularza logowania
