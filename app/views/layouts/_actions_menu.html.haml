@@ -4,7 +4,7 @@
       %h2= yield(:title)
     .col-md-9.col-xs-12
       %ul.nav.nav-pills.nav-justified.navbar-right.navbar-navigation
-        %li= nav_link('Aktywność', '#')
+        %li= nav_link('Aktywność', '/work_times')
         %li= nav_link('Projekty', '/projects')
         %li= nav_link('Raporty', '#')
         - if can? :manage, Dictionary

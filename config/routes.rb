@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users
   resources :admin
   resources :projects
+  resources :work_times
 end
