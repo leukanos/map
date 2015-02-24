@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :set_project, only: [:edit, :update, :destroy]
 
   def index
     @projects = Project.paginate(page: params[:page])
@@ -20,25 +21,35 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
   end
 
   def update
-
+    if @project.update_attributes(project_params)
+      flash[:success] = 'Pomyślnie zmieniono projekt'
+      redirect_to projects_url
+    else
+      flash[:danger] = 'Wystąpił błąd podczas zapisywania'
+      render 'edit'
+    end
   end
 
   def destroy
-    @project = Project.find(params[:id])
     if @project.destroy
       flash[:success] = 'Projekt został usunięty.'
-      redirect_to project_path
+      redirect_to projects_path
     else
       flash[:danger] = 'Podczas usuwania występił błąd'
-      redirect_to project_path
+      redirect_to projects_path
     end
   end
 
   def project_params
-    params.require(:project).permit(:short_name, :name, :assigned_to_id, :parent_id)
+    params.require(:project).permit(:short_name, :name, :assigned_to_id, :parent_id, user_ids: [])
+  end
+
+  private
+
+  def set_project
+    @project = Project.find(params[:id])
   end
 end
