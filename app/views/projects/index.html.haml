@@ -34,5 +34,4 @@
                 -p.users.each do |u|
                   = u.complex_name
                   %br
-    - if can? :create, Project
-      #{link_to "+ dodaj projekt", new_project_path}
+    = will_paginate @projects

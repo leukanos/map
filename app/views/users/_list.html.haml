@@ -29,5 +29,4 @@
             -if can? :manage, User
               = link_to "edytuj", edit_user_path(user)
               = link_to "usuń", user, method: :delete, data: { confirm: "Jesteś pewien?" }, class: "usun"
-  - if current_user.admin?
-     #{link_to "+ dodaj użytkownika", new_user_path}
+  = will_paginate @users

@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.order(:email)
+    @users = User.order(:email).paginate(page: params[:page])
   end
   
   def edit
