@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 20150224151717) do
   create_table "work_times", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "project_id", limit: 4
-    t.integer  "form_id",    limit: 4
-    t.integer  "action_id",  limit: 4
+    t.string   "form",       limit: 255
+    t.string   "action",     limit: 255
     t.date     "date"
     t.decimal  "time",                   precision: 10
     t.string   "comment",    limit: 255
