@@ -1,5 +1,28 @@
 - provide :title, 'Karta czasu pracy'
 .row
   .col-md-10.col-md-offset-1
-    %table.table
+    %table.table.table-striped
       %thead
+        %tr.info
+          %th projekt
+          %th czynność
+          %th forma
+          %th czas
+          %th data
+          %th uwagi
+      %tbody
+        -@work_times.each do |w|
+          %tr
+            %td= w.project.andand.short_name
+            %td= w.action
+            %td= w.form
+            %td= w.time
+            %td= w.date
+            %td= w.comment
+      %tfoot
+        %th
+        %th
+        %th
+        %th= @work_times.sum_time
+        %th
+        %th
