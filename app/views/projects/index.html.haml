@@ -16,8 +16,8 @@
       %tbody
         - @projects.each do |p|
           %tr
-            %td= p.id
-            %td= p.short_name
+            %th= p.id
+            %th= p.short_name
             %td= p.name
             %td= p.state
             %td= p.assigned_to.andand.email
@@ -27,5 +27,12 @@
                 edit_project_path(p), class: 'edit' if can? :edit, p
               = link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove'),
                 project_path(p), method: :delete, data: { confirm: 'Jesteś pewien?' }, class: 'usun' if can? :delete, p
+            %tr
+              %td
+              %th osoby w projekcie:
+              %td{colspan: 5}
+                -p.users.each do |u|
+                  = u.complex_name
+                  %br
     - if can? :create, Project
       #{link_to "+ dodaj projekt", new_project_path}

@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   def full_name
     "#{firstname} #{lastname}"
   end
+
+  def complex_name
+    "#{firstname} #{lastname} - #{email}"
+  end
 end
