@@ -3,8 +3,8 @@ class CreateWorkTimes < ActiveRecord::Migration
     create_table :work_times do |t|
       t.references  :user
       t.references  :project
-      t.integer     :form_id
-      t.integer     :action_id
+      t.string      :form
+      t.string      :action
       t.date        :date
       t.decimal     :time
       t.string      :comment
