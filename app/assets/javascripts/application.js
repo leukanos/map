@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery
 //= require bootstrap-sprockets
 //= require select2
+//= require bootstrap-datepicker
+//= require jquery.nested-fields
 //= require_tree .

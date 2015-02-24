@@ -1,7 +1,7 @@
 - provide :title, 'Karta czasu pracy'
 .row
-  .col-md-10.col-md-offset-1
-    %table.table.table-striped
+  .col-md-12
+    %table.table.table-striped.rcp
       %thead
         %tr.info
           %th projekt
@@ -10,7 +10,17 @@
           %th czas
           %th data
           %th uwagi
+          %th akcje
       %tbody
+        %tr
+          =simple_form_for @work_time do |f|
+            %td= f.association :project, collection: current_user.projects, label_method: :short_name, input_html: { class: "select2 input-sm" }, label: false
+            %td= f.input :action, collection: collect_work_time_activity, input_html: { class: "select2 input-sm" }, label: false
+            %td= f.input :form, collection: collect_work_time_form, input_html: { class: "select2 input-sm" }, label: false
+            %td= f.input :time, input_html: { class: "form-control input-sm" }, label: false
+            %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date" }, label: false
+            %td= f.input :comment, input_html: { class: "form-control input-sm" }, label: false
+            %td= f.button :submit, '+', class: 'btn btn-success'
         -@work_times.each do |w|
           %tr
             %td= w.project.andand.short_name
@@ -19,10 +29,12 @@
             %td= w.time
             %td= w.date
             %td= w.comment
+            %td
       %tfoot
         %th
         %th
         %th
         %th= @work_times.sum_time
+        %th
         %th
         %th
