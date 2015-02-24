@@ -61,6 +61,7 @@ class UsersController < ApplicationController
     # It's mandatory to specify the nested attributes that should be whitelisted.
     # If you use `permit` with just the key that points to the nested attributes hash,
     # it will return an empty hash.
-    params.require(:user).permit(:firstname, :lastname, :email, :tel, :password, :password_confirmation, :limit, roles: [])
+    params.require(:user).permit(:firstname, :lastname, :email, :tel, :password, :password_confirmation, :limit,
+                                 roles: [], project_ids: [])
   end
 end
