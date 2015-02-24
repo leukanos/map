@@ -203,3 +203,23 @@ body {
     margin-top: -20px;
   }
 }
+
+.rcp {
+  .select2-container .select2-choice .select2-arrow {
+    background: #D5DDE0;
+  }
+
+  .select {
+    min-width: 120px;
+    max-width: 250px;
+    padding: 0;
+  }
+}
+
+.select2-offscreen,
+.select2-offscreen:focus {
+  // Keep original element in the same spot
+  // So that HTML5 valiation message appear in the correct position
+  left: auto !important;
+  top: auto !important;
+}
