@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require select2
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.pl.js
 //= require bootstrap/alert
 //= require jquery.nested-fields
 //= require_tree .
