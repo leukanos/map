@@ -1,4 +1,14 @@
 - provide :title, 'Karta czasu pracy'
+- prc = current_user.percentage_realization
+.row
+  .col-md-10.col-md-offset-1
+    .progress
+      -if current_user.limit?
+        .progress-bar{style: "width: #{prc}", class: progress_bar_class}
+          = prc
+      -else
+        .progress-bar.progress-bar-warning{style: 'width: 100%'}
+          Ustaw swój limit(cel) miesięczny!
 .row
   .col-md-12
     %table.table.table-striped.rcp
