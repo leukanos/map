@@ -13,6 +13,7 @@ gem 'devise'
 gem "cancan"
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
+gem 'puma'
 
 gem 'bootstrap-wysihtml5-rails'
 gem 'bootstrap-datepicker-rails'
