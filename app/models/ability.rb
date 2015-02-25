@@ -12,6 +12,7 @@ class Ability
         can :manage, WorkTime
         if user.manager?
           can :manage, Dictionary
+          can :manage, User, id: user.id
           can :manage, Project, assigned_to_id: user.id
         end
       end
