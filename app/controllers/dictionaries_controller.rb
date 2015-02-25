@@ -51,6 +51,6 @@ class DictionariesController < ApplicationController
   end
 
   def dictionary_params
-    params.require(:dictionaries).permit(:kind, :symbol, :ancestry, :parent_id)
+    params.require(:dictionary).permit(:kind, :symbol, :ancestry, :parent_id)
   end
 end
