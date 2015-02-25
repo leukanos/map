@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
+  load_and_authorize_resource
   before_filter :set_project, only: [:edit, :update, :destroy]
+
 
   def index
     @projects = Project.paginate(page: params[:page])

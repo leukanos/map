@@ -6,8 +6,8 @@
       %ul.nav.nav-pills.nav-justified.navbar-right.navbar-navigation
         %li= nav_link('Aktywność', '/work_times')
         %li= nav_link('Projekty', '/projects')
-        %li= nav_link('Raporty', '#')
+        -#%li= nav_link('Raporty', '#')
         - if can? :manage, Dictionary
-          %li= nav_link('Słownik', '/admin')
+          %li= nav_link('Słownik', '/dictionaries')
         - if can? :manage, User
           %li= nav_link('Użytkownicy', '/users')
