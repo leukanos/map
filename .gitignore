@@ -26,3 +26,4 @@
 .rvmrc
 /vendor/cache/pry-0.9.12.6-x86-mingw32.gemq
 /vendor/cache/*
+.env
