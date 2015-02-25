@@ -9,7 +9,7 @@ class Ability
         can :manage, :all
       else
         can :read, :all
-        cam :manage, WorkTime
+        can :manage, WorkTime
         if user.manager?
           can :manage, Dictionary
           can :manage, Project, assigned_to_id: user.id
