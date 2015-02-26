@@ -40,6 +40,7 @@
             %td= w.date
             %td= w.comment
             %td
+              = link_to "edit", edit_work_time_path(w), class: "btn btn-mini", remote: true
       %tfoot
         %th
         %th

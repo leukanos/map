@@ -17,6 +17,10 @@ class WorkTimesController < ApplicationController
     end
   end
 
+  def edit
+    @work_time = WorkTime.find(params[:id])
+  end
+
   private
 
   def work_time_params

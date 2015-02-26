@@ -17,5 +17,6 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pl.js
 //= require bootstrap/alert
+//= require bootstrap/modal
 //= require jquery.nested-fields
 //= require_tree .

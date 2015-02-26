@@ -7,3 +7,5 @@ $( document ).ready(function(){
         autoclose: true
     });
 });
+
+$.fn.modal.Constructor.prototype.enforceFocus = function() {};

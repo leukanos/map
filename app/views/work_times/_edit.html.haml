@@ -1,0 +1,15 @@
+
+.modal-dialog
+  .modal-content
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h4#myModalLabel.modal-title Edytuj wpis
+    .modal-body
+      =simple_form_for @work_time, :html => { :class => 'form-horizontal' } do |f|
+        =f.association :project, collection: current_user.projects, label_method: :short_name, input_html: { class: "form-control" }, label: "Projek"
+        =f.input :action, collection: collect_work_time_activity, input_html: { class: "form-control" }, label: 'Czynność'
+        =f.input :form, collection: collect_work_time_form, input_html: { class: "form-control" }, label: 'Forma'
+        =f.input :time, input_html: { class: "form-control input-sm" }, label: 'Czas'
+        =f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: 'Data'
+        =f.input :comment, input_html: { class: "form-control input-sm" }, label: 'Komentarz'
+        =f.button :submit, 'zapisz', class: 'btn btn-success'
