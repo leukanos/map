@@ -43,10 +43,10 @@ class DictionariesController < ApplicationController
     @dictionary = Dictionary.find(params[:id])
     if @dictionary.destroy
       flash[:success] = 'Pomyślnie usunięto pozycję'
-      redirect_to dictionary_index_path
+      redirect_to dictionaries_path
     else
       flash[:danger] = 'Podczas usuwania występił błąd'
-      redirect_to dictionary_index_path
+      redirect_to dictionaries_path
     end
   end
 
