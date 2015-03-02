@@ -1,12 +1,15 @@
 class Dictionary < ActiveRecord::Base
+  ### settings ###
   has_ancestry
-
-  scope :without_current, ->(current_id) {where('id <> ?', current_id || 0)}
-
-  validates_presence_of :kind, :symbol
-
   enum kind: [ :form, :activity ]
 
+  ### relations and scopes ###
+  scope :without_current, ->(current_id) {where('id <> ?', current_id || 0)}
+
+  #### validations ###
+  validates_presence_of :kind, :symbol
+
+  #### class methods ####
   def self.create_with_parent(params = {})
 
     parent_id = params.delete('parent')
@@ -21,6 +24,7 @@ class Dictionary < ActiveRecord::Base
 
   end
 
+  #### object methods ####
   def full_symbol
     if parent
       "#{parent.andand.symbol}: #{symbol}"
