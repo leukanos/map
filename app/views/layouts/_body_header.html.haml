@@ -18,4 +18,4 @@
                         %li= link_to "profil", current_user
                       %li= link_to "ustawienia", edit_user_path(current_user)
                       %li.divider{:role => "presentation"}
-                      %li= link_to "wyloguj", destroy_user_session_path
+                      %li= link_to "wyloguj", destroy_user_session_path, method: :delete
