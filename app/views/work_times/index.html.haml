@@ -40,7 +40,10 @@
             %td= w.date
             %td= w.comment
             %td
-              = link_to "edit", edit_work_time_path(w), class: "btn btn-mini", remote: true
+              = link_to content_tag(:span, "", class: 'glyphicon glyphicon-edit'), edit_work_time_path(w),
+                class: "btn btn-mini", remote: true
+              = link_to content_tag(:span, "", class: 'glyphicon glyphicon-remove'), work_time_path(w),
+                method: :delete, data: { confirm: "Jesteś pewien?" }, class: "usun"
       %tfoot
         %th
         %th
