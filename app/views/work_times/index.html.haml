@@ -8,7 +8,7 @@
           = prc
       -else
         .progress-bar.progress-bar-warning{style: 'width: 100%'}
-          Ustaw swój limit(cel) miesięczny!
+          =link_to 'Ustaw swój limit(cel) miesięczny!', edit_user_path(current_user)
 .row
   .col-md-12
     %table.table.table-striped.rcp
