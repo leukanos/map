@@ -31,6 +31,7 @@ gem 'bootstrap-will_paginate'
 gem 'ancestry'
 gem 'andand'
 # gem 'enum_help'
+gem 'coveralls', require: false
 
 group :production do
   # gem 'pg'

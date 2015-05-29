@@ -7,6 +7,9 @@ require 'simplecov'
 require 'database_cleaner'
 SimpleCov.start
 
+require 'coveralls'
+Coveralls.wear!
+
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 include ActionDispatch::TestProcess
