@@ -3,6 +3,7 @@ module FormHelper
     Dictionary.without_current(current_id).map{|d| [d.symbol, d.id]}
   end
 
+  #duplicated in dictionaries_helper.rb
   def collect_kinds
     Dictionary.kinds.map{|k,_v| k}
   end
