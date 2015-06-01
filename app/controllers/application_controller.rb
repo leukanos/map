@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = "Brak dostępu."
+    flash[:error] = "Brak dostępu. #{exception}"
     redirect_to root_url
   end
 end

@@ -4,6 +4,6 @@ module DictionariesHelper
   end
 
   def collect_kinds
-    Dictionary.kinds.map{|k,v| k}
+    Dictionary.kinds.map{|k,_v| k}
   end
 end

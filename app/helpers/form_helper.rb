@@ -4,7 +4,7 @@ module FormHelper
   end
 
   def collect_kinds
-    Dictionary.kinds.map{|k,v| k}
+    Dictionary.kinds.map{|k,_v| k}
   end
 
   def collect_projects_parents(current_id)
