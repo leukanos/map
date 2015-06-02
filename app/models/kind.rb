@@ -5,6 +5,7 @@ class Kind < ActiveRecord::Base
   has_many :work_times
 
   #### validations ###
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 
   #### class methods ####
 

@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :kind do
-    name "MyString"
+    sequence(:name) { |n| "kind_#{n}"}
   end
-
 end

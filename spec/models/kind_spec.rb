@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Kind, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of :name}
+  it { should validate_uniqueness_of :name}
+  it { should have_many :work_times }
+
+  it 'should validate case insensitive uniqueness' do
+    create(:kind, name: 'category')
+    expect(build(:kind, name: 'category')).not_to be_valid
+  end
 end
