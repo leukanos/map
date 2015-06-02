@@ -14,30 +14,27 @@
     %table.table.table-striped.rcp
       %thead
         %tr.info
+          %th data
           %th projekt
           %th czynność
-          %th forma
           %th czas
-          %th data
           %th uwagi
           %th akcje
       %tbody
         %tr
           =simple_form_for @work_time do |f|
+            %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: false
             %td= f.association :project, collection: current_user.projects, label_method: :short_name, input_html: { class: "select2 input-sm" }, label: false
             %td= f.input :action, collection: collect_work_time_activity, input_html: { class: "select2 input-sm" }, label: false
-            %td= f.input :form, collection: collect_work_time_form, input_html: { class: "select2 input-sm" }, label: false
             %td= f.input :time, input_html: { class: "form-control input-sm" }, label: false
-            %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: false
             %td= f.input :comment, input_html: { class: "form-control input-sm" }, label: false
             %td= f.button :submit, '+', class: 'btn btn-success'
         -@work_times.each do |w|
           %tr
+            %td= w.date
             %td= w.project.andand.short_name
             %td= w.action
-            %td= w.form
             %td= w.time
-            %td= w.date
             %td= w.comment
             %td
               = link_to content_tag(:span, "", class: 'glyphicon glyphicon-edit'), edit_work_time_path(w),

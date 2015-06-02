@@ -31,3 +31,4 @@ TODO
 1. dodawanie userów do projektów
 2. work time edit
 3. generowanie raportów
+4. gritter & notifications

@@ -57,4 +57,6 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
   gem 'rubocop', require: false
+
+  gem "annotate"
 end

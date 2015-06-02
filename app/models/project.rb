@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  short_name     :string(25)
+#  state          :string(255)
+#  closing_date   :date
+#  ancestry       :string(255)
+#  assigned_to_id :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 class Project < ActiveRecord::Base
   ### settings ###
   has_ancestry
