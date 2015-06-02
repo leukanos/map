@@ -1,13 +1,21 @@
 = simple_form_for @project do |f|
-  = f.error_notification
-  .col-md-5.col-md-offset-1
+  .col-md-10.col-md-offset-1
+    = f.error_notification
     .form-inputs
-      =f.input :short_name
-      =f.input :name
-      =f.association :assigned_to, collection: collect_users , input_html: { class: "select2" }
-      =f.input :parent_id, collection: collect_projects_parents(f.object.id), input_html: { class: "select2" },
-        selected: f.object.parent_id, :include_blank => true
-      =f.association :users, label_method: :full_name , input_html: { class: "select2" }
-      %hr
-      = f.button :submit, class: 'btn btn-success'
-      = link_to t('cancel'), projects_path, class: 'btn btn-sm btn-default'
+      .row
+        .col-md-12
+          =f.input :short_name
+          =f.input :name
+      .row
+        .col-md-6
+          =f.association :assigned_to, collection: collect_users , input_html: { class: "select2" }
+          =f.input :parent_id, collection: collect_projects_parents(f.object.id), input_html: { class: "select2" },
+            selected: f.object.parent_id, :include_blank => true
+          =f.association :users, label_method: :full_name , input_html: { class: "select2" }
+        .col-md-6
+          =f.input :description
+      .row
+        .col-md-12
+          %hr
+          = f.button :submit, class: 'btn btn-success'
+          = link_to t('cancel'), projects_path, class: 'btn btn-sm btn-default'
