@@ -20,6 +20,7 @@ class WorkTime < ActiveRecord::Base
   ### relations and scopes ###
   belongs_to :user
   belongs_to :project
+  belongs_to :kind
 
   #### validations ###
   validates_presence_of :user_id, :project_id, :date, :time
