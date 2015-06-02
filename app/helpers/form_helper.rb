@@ -19,8 +19,4 @@ module FormHelper
   def collect_work_time_activity
     WorkTime.get_activity.collect{|a| a.symbol}
   end
-
-  def collect_work_time_form
-    WorkTime.get_form.collect{|a| a.symbol}
-  end
 end
