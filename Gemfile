@@ -32,6 +32,7 @@ gem 'ancestry'
 gem 'andand'
 # gem 'enum_help'
 gem 'coveralls', require: false
+gem 'hashtel'
 
 group :production do
   # gem 'pg'

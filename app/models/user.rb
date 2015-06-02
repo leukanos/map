@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
   def full_name
     "#{firstname} #{lastname}"
   end
+  alias_method :name, :full_name
+
+  def color
+    name.pastel_color
+  end
 
   def complex_name
     "#{firstname} #{lastname} - #{email}"
