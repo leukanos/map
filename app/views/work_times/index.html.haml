@@ -23,12 +23,13 @@
       %tbody
         %tr
           =simple_form_for @work_time do |f|
-            %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: false
-            %td= f.association :project, collection: current_user.projects, label_method: :short_name, input_html: { class: "select2 input-sm" }, label: false
-            %td= f.input :action, collection: collect_work_time_activity, input_html: { class: "select2 input-sm" }, label: false
-            %td= f.input :time, input_html: { class: "form-control input-sm" }, label: false
-            %td= f.input :comment, input_html: { class: "form-control input-sm" }, label: false
-            %td= f.button :submit, '+', class: 'btn btn-success'
+            .form-inputs
+              %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: false
+              %td= f.association :project, collection: current_user.projects, label_method: :short_name, input_html: { class: "select2 input-sm" }, label: false
+              %td= f.input :action, collection: collect_work_time_activity, input_html: { class: "select2 input-sm" }, label: false
+              %td= f.input :time, input_html: { class: "form-control input-sm" }, label: false
+              %td= f.input :comment, input_html: { class: "form-control input-sm" , placeholder: 'test'}, label: false
+              %td= f.button :submit, '+', class: 'btn btn-success'
         -@work_times.each do |w|
           %tr
             %td= w.date
