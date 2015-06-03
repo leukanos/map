@@ -28,3 +28,5 @@ en:
   users:
     user_created: User has been created
     user_updated: User has been updated
+    user_destroyed: User has been destroyed
+    cannot_remove_yourself: You can not remove yourself

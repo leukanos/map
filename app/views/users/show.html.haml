@@ -2,15 +2,12 @@
 .row
   .col-md-4
     %h2
-      = @user.imie
-      = @user.nazwisko
+      = @user.firstname
+      = @user.lastname
       (#{@user.name})
     Limit godzin w miesiącu: #{@user.limit ? @user.limit : content_tag('spam', 'Nie ustawiono limitu!', class: 'label label-danger')}
     %hr/
     = mail_to @user.email
     %hr/
-    - if @user.gsm
-      = @user.gsm
-      %hr/
     - if @user.id == current_user.id || current_user.admin?
       = link_to 'edytuj', edit_user_path(@user)

@@ -46,21 +46,17 @@ class UsersController < ApplicationController
   
   def destroy
     if current_user == User.find(params[:id])
-      flash[:warning] = 'Nie możesz usunąć sam siebie'
+      gflash warning: t('users.cannot_remove_yourself')
       redirect_to users_url
     elsif User.find(params[:id]).destroy
-      flash[:success] = 'Pomyślnie usunięto użytkownika'
+      gflash success: t('users.user_destroyed')
       redirect_to users_url
     else
-      flash[:danger] = 'Podczas usuwania występił błąd'
-      redirect to users_url
+      redirect_to users_url
     end
   end
 
   def user_params
-    # It's mandatory to specify the nested attributes that should be whitelisted.
-    # If you use `permit` with just the key that points to the nested attributes hash,
-    # it will return an empty hash.
     params.require(:user).permit(:firstname, :lastname, :email, :tel, :password, :password_confirmation, :limit,
                                  roles: [], project_ids: [])
   end
