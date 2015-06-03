@@ -16,6 +16,6 @@ module PathHelperHelper
 
   def link_to_destroy(path)
     link_to content_tag(:span, "", class: 'glyphicon glyphicon-remove'), path,
-            method: :delete, data: { confirm: t('confirm') }, class: "usun"
+            method: :delete, data: { confirm: t('confirm') }, class: "destroy"
   end
 end
