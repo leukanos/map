@@ -23,13 +23,17 @@
               %td= f.association :kind, input_html: { class: "select2", placeholder: :kind }, label: false
               %td= f.input :time, input_html: { placeholder: :time }, label: false
               %td= f.input :comment, input_html: { placeholder: :comment }, label: false
-              %td= f.button :submit, '+', class: 'btn btn-success'
+              %td.center= f.button :submit, '+', class: 'btn btn-success'
       %tbody
         -@work_times.each do |w|
           %tr
             %td= w.date
-            %td= w.project
-            %td= w.kind
+            %td
+              %span
+              = w.project
+            %td
+              %span.color{:style => "background-color:#{w.kind.color};"}
+              = w.kind
             %td= w.time
             %td= w.comment
             %td
@@ -39,7 +43,7 @@
         %th
         %th
         %th
-        %th= @work_times.sum_time
+        %th.center= @work_times.sum_time
         %th
         %th
         %th

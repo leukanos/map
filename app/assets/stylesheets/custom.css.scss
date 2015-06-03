@@ -214,6 +214,44 @@ body {
     max-width: 250px;
     padding: 0;
   }
+
+  .info {
+    // date
+    td:nth-child(4) {
+      width: 12%;
+    }
+    // project
+    td:nth-child(5) {
+      width: 15%;
+    }
+    // hours
+    td:nth-child(6) {
+      width: 18%;
+    }
+    // category
+    td:nth-child(7) {
+      width: 8%;
+    }
+    // description
+    td:nth-child(8) {
+      white-space: normal;
+      width: 37%;
+    }
+    // actions
+    td:nth-child(9) {
+      width: 10%;
+    }
+
+  }
+
+  tbody > tr > td {
+    text-align: center;
+    vertical-align: middle !important;
+  }
+}
+
+.center {
+  text-align: center;
 }
 
 .select2-offscreen,
@@ -232,4 +270,11 @@ body {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
+}
+
+.color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
