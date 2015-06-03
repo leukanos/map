@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'simplecov'
 require 'database_cleaner'
 require "cancan/matchers"
+require 'capybara/rails'
 SimpleCov.start
 
 require 'coveralls'

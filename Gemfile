@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-mocks'
   gem 'rspec-activemodel-mocks'
+  gem 'capybara'
   gem 'shoulda-matchers'
   gem 'nyan-cat-formatter'
   gem 'simplecov', require: false
