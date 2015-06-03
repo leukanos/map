@@ -11,5 +11,8 @@ class Kind < ActiveRecord::Base
   #### class methods ####
 
   #### object methods ###
+  def to_s
+    self.name
+  end
 
 end

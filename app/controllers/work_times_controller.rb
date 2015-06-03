@@ -44,7 +44,7 @@ class WorkTimesController < ApplicationController
   private
 
   def work_time_params
-    params.require(:work_time).permit(:project_id, :action, :form, :time, :date, :comment)
+    params.require(:work_time).permit(:project_id, :kind_id, :time, :date, :comment)
   end
 
   def set_arguments

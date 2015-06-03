@@ -14,25 +14,22 @@
     %table.table.table-striped.rcp
       %thead
         %tr.info
-          %th data
-          %th projekt
-          %th czas
-          %th uwagi
-          %th akcje
-      %tbody
-        %tr
           =simple_form_for @work_time do |f|
             .form-inputs
-              %td= f.input :date, as: :string, input_html: { class: "form-control input-sm date", value: Date.today }, label: false
-              %td= f.association :project, collection: current_user.projects, label_method: :short_name, input_html: { class: "select2 input-sm" }, label: false
-              -#%td= f.input :action, collection: collect_work_time_activity, input_html: { class: "select2 input-sm" }, label: false
-              %td= f.input :time, input_html: { class: "form-control input-sm" }, label: false
-              %td= f.input :comment, input_html: { class: "form-control input-sm" , placeholder: 'test'}, label: false
+              %td= f.input :date, as: :string,
+                        input_html: { class: " input-sm date", value: Date.today }, label: false
+              %td= f.association :project, collection: current_user.projects,
+                        input_html: { class: "select2", placeholder: :project }, label: false
+              %td= f.association :kind, input_html: { class: "select2", placeholder: :kind }, label: false
+              %td= f.input :time, input_html: { placeholder: :time }, label: false
+              %td= f.input :comment, input_html: { placeholder: :comment }, label: false
               %td= f.button :submit, '+', class: 'btn btn-success'
+      %tbody
         -@work_times.each do |w|
           %tr
             %td= w.date
-            %td= w.project.andand.short_name
+            %td= w.project
+            %td= w.kind
             %td= w.time
             %td= w.comment
             %td

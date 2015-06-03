@@ -29,4 +29,9 @@ class Project < ActiveRecord::Base
   #### validations ###
   validates_presence_of   :short_name
   validates_uniqueness_of :short_name
+
+  #### object methods ###
+  def to_s
+    self.short_name
+  end
 end
