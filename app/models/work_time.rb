@@ -12,6 +12,7 @@
 #  comment    :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  kind_id    :integer
 #
 
 class WorkTime < ActiveRecord::Base
@@ -23,7 +24,7 @@ class WorkTime < ActiveRecord::Base
   belongs_to :kind
 
   #### validations ###
-  validates_presence_of :user_id, :project_id, :date, :time
+  validates_presence_of :user, :project, :date, :time, :kind
 
   #### class methods ####
   def self.sum_time

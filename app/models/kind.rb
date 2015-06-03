@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: kinds
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)      not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Kind < ActiveRecord::Base
   ### settings ###
 
@@ -12,7 +22,11 @@ class Kind < ActiveRecord::Base
 
   #### object methods ###
   def to_s
-    self.name
+    self.name.humanize
+  end
+
+  def color
+    name.pastel_color
   end
 
 end

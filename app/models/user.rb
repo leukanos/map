@@ -16,8 +16,8 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  tel                    :string(255)
-#  firstname              :string(255)
-#  lastname               :string(255)
+#  first_name             :string(255)
+#  last_name              :string(255)
 #  roles_mask             :integer
 #  limit                  :decimal(8, 2)
 #
@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :projects
 
   #### validations ###
+  validates_presence_of :first_name, :last_name
 
   #### class methods ####
 

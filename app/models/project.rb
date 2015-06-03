@@ -11,6 +11,7 @@
 #  assigned_to_id :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  description    :text(65535)
 #
 
 class Project < ActiveRecord::Base
@@ -32,6 +33,10 @@ class Project < ActiveRecord::Base
 
   #### object methods ###
   def to_s
-    self.short_name
+    self.short_name.humanize
+  end
+
+  def color
+    name.pastel_color
   end
 end

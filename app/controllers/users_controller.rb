@@ -5,6 +5,7 @@
 
 class UsersController < ApplicationController
   load_and_authorize_resource
+  before_filter :set_user, only: [:edit, :update, :show, :destroy]
 
   def new
     @user = User.new
@@ -26,11 +27,9 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
   end
   
   def update
-    @user = User.find(params[:id])
 
     if @user.update_without_password(user_params)
       gflash success: t('users.user_updated')
@@ -41,11 +40,10 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
   end
   
   def destroy
-    if current_user == User.find(params[:id])
+    if current_user == @user
       gflash warning: t('users.cannot_remove_yourself')
       redirect_to users_url
     elsif User.find(params[:id]).destroy
@@ -54,6 +52,12 @@ class UsersController < ApplicationController
     else
       redirect_to users_url
     end
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def user_params
