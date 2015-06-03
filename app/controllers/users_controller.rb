@@ -33,10 +33,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_without_password(user_params)
-      flash[:success] = 'Pomyślnie zmieniono użytkownika'
+      gflash success: 'Pomyślnie zmieniono użytkownika', :notice => "This product doesn't have a category."
       redirect_to users_url
     else
-      flash[:danger] = 'Wystąpił błąd podczas zapisywania'
+      gflash error: 'Wystąpił błąd podczas zapisywania'
       render 'edit'
     end
   end
