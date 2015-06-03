@@ -33,6 +33,7 @@ gem 'andand'
 # gem 'enum_help'
 gem 'coveralls', require: false
 gem 'hashtel'
+gem 'figaro'
 
 group :production do
   # gem 'pg'
@@ -61,6 +62,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
   gem 'rubocop', require: false
+  gem "codeclimate-test-reporter", require: nil
 
   gem "annotate"
 end

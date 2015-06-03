@@ -12,6 +12,9 @@ SimpleCov.start
 require 'coveralls'
 Coveralls.wear!('rails')
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 include ActionDispatch::TestProcess
