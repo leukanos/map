@@ -3,6 +3,7 @@ class Kind < ActiveRecord::Base
 
   ### relations and scopes ###
   has_many :work_times
+  has_many :projects, through: :work_times
 
   #### validations ###
   validates :name, presence: true, uniqueness: { case_sensitive: false }
