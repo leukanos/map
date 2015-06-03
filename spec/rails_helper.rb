@@ -10,7 +10,7 @@ require 'capybara/rails'
 SimpleCov.start
 
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear!('rails')
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
