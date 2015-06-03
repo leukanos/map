@@ -10,10 +10,8 @@ class WorkTimesController < ApplicationController
     @work_time  = current_user.work_times.new(work_time_params)
 
     if @work_time.save
-      flash[:success] = 'Dodano pozycję'
-      redirect_to work_times_path
+      redirect_to work_times_path, notice: t('save_work_time')
     else
-      flash[:danger] = 'Wystąpił błąd podczas zapisywania'
       render :index
     end
   end
