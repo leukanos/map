@@ -4,6 +4,10 @@ FactoryGirl.define do
     sequence(:firstname) { |n| "name_#{n}"}
     sequence(:lastname) { |n| "lastname_#{n}"}
     password 'asdf1234^'
+
+    factory :admin do
+      roles :admin
+    end
   end
 
 end
