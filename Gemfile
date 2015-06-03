@@ -10,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
-gem 'cancan'
+gem 'cancancan'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'puma'
@@ -43,7 +43,7 @@ group :development, :test do
   gem 'mysql2'
   # Call 'byebug' anywhere in the code to stop execution and
   # get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
 
   # Access an IRB console on exception pages or
   # by using <%= console %> in views
@@ -52,6 +52,8 @@ group :development, :test do
 
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec-mocks'
+  gem 'rspec-activemodel-mocks'
   gem 'shoulda-matchers'
   gem 'nyan-cat-formatter'
   gem 'simplecov', require: false
