@@ -19,4 +19,5 @@
 //= require bootstrap/alert
 //= require bootstrap/modal
 //= require jquery.nested-fields
+//= require gritter
 //= require_tree .

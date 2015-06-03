@@ -1,6 +1,7 @@
 $ ->
   bind_inputs()
   $.fn.modal.Constructor::enforceFocus = ->
+  gritter_setup()
 
 @bind_inputs = (id) ->
   id ||= ''
@@ -11,3 +12,8 @@ $ ->
     todayHighlight: true,
     autoclose: true
   })
+
+@gritter_setup = ->
+  jQuery.extend $.gritter.options,
+    time: 1500
+    position: 'bottom-left'

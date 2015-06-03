@@ -34,6 +34,7 @@ gem 'andand'
 gem 'coveralls', require: false
 gem 'hashtel'
 gem 'figaro'
+gem "gritter" #popup notifications
 
 group :production do
   # gem 'pg'
