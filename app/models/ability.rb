@@ -12,7 +12,7 @@ class Ability
       can :manage, User, id: user.id
 
       if user.manager?
-        can :manage, Dictionary
+        can :manage, Kind
         can :manage, Project, assigned_to_id: user.id
       end
     end

@@ -7,7 +7,7 @@
         %li= nav_link('Aktywność', '/work_times')
         %li= nav_link('Projekty', '/projects')
         -#%li= nav_link('Raporty', '#')
-        - if can? :manage, Dictionary
-          %li= nav_link('Słownik', '/dictionaries')
+        - if can? :manage, Kind
+          %li= nav_link('Słownik', '/kinds')
         - if current_user.admin?
           %li= nav_link('Użytkownicy', '/users')
