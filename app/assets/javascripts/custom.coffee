@@ -15,5 +15,5 @@ $ ->
 
 @gritter_setup = ->
   jQuery.extend $.gritter.options,
-    time: 1500
+    time: 2000
     position: 'bottom-left'

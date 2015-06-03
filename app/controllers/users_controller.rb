@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.id = User.unscoped.order(:id).last.id + 1
     if @user.save
-      flash[:success] = 'Utworzono uzytkownika'
+      gflash success: t('users.user_created')
       redirect_to :back
     else
       render 'new'
@@ -33,10 +33,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_without_password(user_params)
-      gflash success: 'Pomyślnie zmieniono użytkownika', :notice => "This product doesn't have a category."
+      gflash success: t('users.user_updated')
       redirect_to users_url
     else
-      gflash error: 'Wystąpił błąd podczas zapisywania'
       render 'edit'
     end
   end
