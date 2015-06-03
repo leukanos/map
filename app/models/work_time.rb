@@ -30,14 +30,6 @@ class WorkTime < ActiveRecord::Base
   sum(:time)
   end
 
-  def self.get_form
-  Dictionary.form
-  end
-
-  def self.get_activity
-  Dictionary.activity
-  end
-
   #### object methods ###
 
 end
