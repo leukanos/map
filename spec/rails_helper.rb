@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'simplecov'
 require 'database_cleaner'
+require "cancan/matchers"
 SimpleCov.start
 
 require 'coveralls'
@@ -36,6 +37,8 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :view
+  config.include CanCan::Ability
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
