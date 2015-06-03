@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 gem 'rails', '4.2.0'
-gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -15,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'puma'
 
+gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-wysihtml5-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-modal-rails'
@@ -30,10 +30,9 @@ gem 'composite_primary_keys'
 gem 'bootstrap-will_paginate'
 gem 'ancestry'
 gem 'andand'
-# gem 'enum_help'
 gem 'coveralls', require: false
 gem 'hashtel'
-gem 'figaro'
+gem 'figaro' #application.yml env vars
 gem "gritter" #popup notifications
 
 group :production do
@@ -43,8 +42,7 @@ end
 
 group :development, :test do
   gem 'mysql2'
-  # Call 'byebug' anywhere in the code to stop execution and
-  # get a debugger console
+
   gem 'pry-byebug'
 
   # Access an IRB console on exception pages or

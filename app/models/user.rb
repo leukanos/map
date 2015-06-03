@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
 
   #### object methods ####
   def full_name
-    "#{firstname} #{lastname}"
+    "#{first_name} #{last_name}"
   end
   alias_method :name, :full_name
 
@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
   end
 
   def complex_name
-    "#{firstname} #{lastname} - #{email}"
+    "#{first_name} #{last_name} - #{email}"
   end
 
   def sum_time

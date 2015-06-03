@@ -4,11 +4,11 @@
   .col-md-5.col-md-offset-1
     .form-inputs
       - if current_user.admin?
-        = f.input :email, label: "email", required: true
-      = f.input :firstname, label: "imie", required: true
-      = f.input :lastname, label: "nazwisko", required: true
-      = f.input :tel, label: "telefon", required: false
-      = f.input :limit, label: "Limit godzin", required: false
+        = f.input :email, required: true
+      = f.input :first_name, required: true
+      = f.input :last_name, required: true
+      = f.input :tel, required: false
+      = f.input :limit, required: false
       = f.association :projects, label_method: :short_name, input_html: { class: "select2" }, label: "Projekty", required: false
       - if current_user.admin?
         = f.input :roles, collection: User.valid_roles,

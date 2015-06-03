@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602222742) do
+ActiveRecord::Schema.define(version: 20150603204214) do
 
   create_table "dictionaries", force: :cascade do |t|
     t.integer  "kind",       limit: 4
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20150602222742) do
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
     t.string   "tel",                    limit: 255
-    t.string   "firstname",              limit: 255
-    t.string   "lastname",               limit: 255
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
     t.integer  "roles_mask",             limit: 4
     t.decimal  "limit",                              precision: 8, scale: 2
   end
