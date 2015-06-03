@@ -1,5 +1,6 @@
 $ ->
   bind_inputs()
+  $.fn.modal.Constructor::enforceFocus = ->
 
 @bind_inputs = (id) ->
   id ||= ''
