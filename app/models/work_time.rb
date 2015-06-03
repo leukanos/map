@@ -28,7 +28,7 @@ class WorkTime < ActiveRecord::Base
 
   #### class methods ####
   def self.sum_time
-  sum(:time)
+    sum(:time)
   end
 
   #### object methods ###

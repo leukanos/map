@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PathHelperHelper, type: :helper do
+RSpec.describe PathHelper, type: :helper do
 
   describe '#link_to_*' do
     let(:user) { create(:user) }
