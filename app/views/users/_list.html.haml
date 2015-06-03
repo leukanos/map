@@ -27,6 +27,6 @@
               \-
           %td
             -if can? :manage, user
-              = link_to "edytuj", edit_user_path(user)
-              = link_to "usuń", user, method: :delete, data: { confirm: "Jesteś pewien?" }, class: "usun"
+              = link_to_edit edit_user_path(user)
+              = link_to_destroy user
   = will_paginate @users

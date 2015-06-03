@@ -17,7 +17,7 @@
           =simple_form_for @work_time do |f|
             .form-inputs
               %td= f.input :date, as: :string,
-                        input_html: { class: " input-sm date", value: Date.today }, label: false
+                        input_html: { class: " idate", value: Date.today }, label: false
               %td= f.association :project, collection: current_user.projects,
                         input_html: { class: "select2", placeholder: :project }, label: false
               %td= f.association :kind, input_html: { class: "select2", placeholder: :kind }, label: false
@@ -33,10 +33,8 @@
             %td= w.time
             %td= w.comment
             %td
-              = link_to content_tag(:span, "", class: 'glyphicon glyphicon-edit'), edit_work_time_path(w),
-                class: "btn btn-mini", remote: true
-              = link_to content_tag(:span, "", class: 'glyphicon glyphicon-remove'), work_time_path(w),
-                method: :delete, data: { confirm: "Jesteś pewien?" }, class: "usun"
+              = link_to_edit edit_work_time_path(w), remote: true
+              = link_to_destroy work_time_path(w)
       %tfoot
         %th
         %th
