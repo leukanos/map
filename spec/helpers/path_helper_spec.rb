@@ -9,8 +9,8 @@ RSpec.describe PathHelper, type: :helper do
       it 'generates correct link' do
         link = link_to_edit edit_user_path(user)
 
-        expect(link).to include('<span class="glyphicon glyphicon-edit">')
-        expect(link).to have_css('a')
+        expect(link).to have_selector('span.glyphicon.glyphicon-edit')
+        expect(link).to have_selector('a')
       end
     end
 
@@ -18,16 +18,31 @@ RSpec.describe PathHelper, type: :helper do
       it 'generates correct link' do
         link = link_to_destroy user
 
-        expect(link).to include('<span class="glyphicon glyphicon-remove">')
-        expect(link).to have_css('a')
+        expect(link).to have_selector('span.glyphicon.glyphicon-remove')
+        expect(link).to have_selector('a')
 
+        expect(link).to have_selector('.destroy')
         expect(link).to include(t('confirm'))
-        expect(link).to include('class="destroy"')
       end
     end
   end
 
   describe '#nav_link' do
-    pending 'Add nav_link spec'
+    before :each do
+      controller.stub(:params).and_return({controller: 'work_times'})
+    end
+
+    it 'return link with correct selected class' do
+      link = nav_link(t('shared.work_times'), work_times_path)
+      expect(link).to have_selector("a.btn.btn-success[href='#{work_times_path}']",
+                        text: t('shared.work_times'))
+    end
+
+    it 'return correct link withoud selected class' do
+      link = nav_link(t('shared.users'), users_path)
+      expect(link).to have_selector("a.btn[href='#{users_path}']",
+                        text: t('shared.users'))
+      expect(link).not_to have_selector('.btn-success')
+    end
   end
 end
