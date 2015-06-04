@@ -17,7 +17,7 @@
           =simple_form_for @work_time do |f|
             .form-inputs
               %td= f.input :date, as: :string,
-                        input_html: { class: "date", value: Date.today }, label: false
+                        input_html: { class: "date", value: f.object.date || Date.today }, label: false
               %td= f.association :project, collection: current_user.projects,
                         input_html: { class: "select2", placeholder: :project }, label: false
               %td= f.association :kind, input_html: { class: "select2", placeholder: :kind }, label: false
