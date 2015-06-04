@@ -1,4 +1,4 @@
-- provide :title, 'Karta czasu pracy'
+- provide :title, t('shared.work_times')
 - prc = current_user.percentage_realization
 .row
   .col-md-10.col-md-offset-1
@@ -17,7 +17,7 @@
           =simple_form_for @work_time do |f|
             .form-inputs
               %td= f.input :date, as: :string,
-                        input_html: { class: " idate", value: Date.today }, label: false
+                        input_html: { class: "date", value: Date.today }, label: false
               %td= f.association :project, collection: current_user.projects,
                         input_html: { class: "select2", placeholder: :project }, label: false
               %td= f.association :kind, input_html: { class: "select2", placeholder: :kind }, label: false
