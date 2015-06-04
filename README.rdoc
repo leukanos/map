@@ -1,4 +1,6 @@
 == README
+{<img src="https://codeclimate.com/github/leukanos/map/badges/gpa.svg" />}[https://codeclimate.com/github/leukanos/map]
+{<img src="https://codeclimate.com/github/leukanos/map/badges/coverage.svg" />}[https://codeclimate.com/github/leukanos/map/coverage]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -7,8 +9,6 @@ Things you may want to cover:
 
 * Ruby version
 
-{<img src="https://codeclimate.com/github/leukanos/map/badges/gpa.svg" />}[https://codeclimate.com/github/leukanos/map]
-{<img src="https://codeclimate.com/github/leukanos/map/badges/coverage.svg" />}[https://codeclimate.com/github/leukanos/map/coverage]
 
 * System dependencies
 
