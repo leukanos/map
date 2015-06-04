@@ -15,6 +15,8 @@ class Kind < ActiveRecord::Base
   has_many :work_times
   has_many :projects, through: :work_times
 
+  scope :by_name, -> { order(:name) }
+
   #### validations ###
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 

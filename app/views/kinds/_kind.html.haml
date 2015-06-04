@@ -1,0 +1,7 @@
+%li
+  %span.color{:style => "background-color:#{kind.color};"}
+  %span= kind
+  %span
+    (
+    = link_to_edit(edit_kind_path(kind))
+    )

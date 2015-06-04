@@ -11,7 +11,7 @@ module PathHelper
 
   def link_to_edit(path, args={})
     link_to content_tag(:span, "", class: 'glyphicon glyphicon-edit'), path,
-            class: "btn btn-mini", remote: args[:remote]
+            remote: args[:remote]
   end
 
   def link_to_destroy(path)
