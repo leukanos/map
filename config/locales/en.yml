@@ -25,6 +25,15 @@ en:
   save_work_time: Entry registered
   confirm: Are you shoure?
 
+  shared:
+    work_times: Work Times
+    projects: Projects
+    kinds: Kinds
+    users: Users
+
+  kind:
+    created: Kind has been created
+
   users:
     user_created: User has been created
     user_updated: User has been updated
