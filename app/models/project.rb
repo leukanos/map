@@ -28,6 +28,7 @@ class Project < ActiveRecord::Base
   scope :without_current, ->(current_id) {where('id <> ?', current_id || 0)}
 
   #### validations ###
+  validates_presence_of   :name
   validates_presence_of   :short_name
   validates_uniqueness_of :short_name
 
