@@ -44,6 +44,8 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :view
   config.include CanCan::Ability
 
+  config.render_views
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
