@@ -6,5 +6,5 @@
       %ul.nav.nav-pills.nav-justified.navbar-right.navbar-navigation
         %li= nav_link(t('shared.work_times'), work_times_path)
         %li= nav_link(t('shared.projects'), projects_path)
-        %li= nav_link(t('shared.kinds'), kinds_path) if can? :manage, Kind
+        %li= nav_link(t('shared.kinds'), kinds_path)
         %li= nav_link(t('shared.users'), users_path) if current_user.admin?
