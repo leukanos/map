@@ -12,4 +12,8 @@ FactoryGirl.define do
   factory :kind do
     sequence(:name) { |n| "kind_#{n}"}
   end
+
+  factory :invalid_kind, class: Kind do
+    name ''
+  end
 end
