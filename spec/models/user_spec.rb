@@ -25,13 +25,18 @@
 require 'rails_helper'
 
 describe User do
-  it { should have_many :assigned_projects}
-  it { should have_many :work_times}
-  it { should have_and_belong_to_many :projects}
-  it { should validate_presence_of :email}
-  it { should validate_presence_of :first_name}
-  it { should validate_presence_of :last_name}
-  it { should validate_presence_of :password}
+  context 'associations' do
+    it { should have_many :assigned_projects}
+    it { should have_many :work_times}
+    it { should have_and_belong_to_many :projects}
+  end
+
+  context 'validations' do
+    it { should validate_presence_of :email}
+    it { should validate_presence_of :first_name}
+    it { should validate_presence_of :last_name}
+    it { should validate_presence_of :password}
+  end
 
   it 'create valid user' do
     user = User.new(
@@ -49,12 +54,16 @@ describe User do
   describe 'with correct user' do
     let(:user) { create(:user) }
 
-    it '#full_name' do
-      expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
+    context '#full_name' do
+      it 'return correct string' do
+        expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
+      end
     end
 
-    it '#color' do
-      expect(user.color).to eq(user.name.pastel_color)
+    context '#color' do
+      it 'return correct color' do
+        expect(user.color).to eq(user.name.pastel_color)
+      end
     end
   end
 end
