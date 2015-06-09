@@ -1,0 +1,12 @@
+class ClassName < ActiveRecord::Base
+  ### settings ###
+
+  ### relations and scopes ###
+
+  #### validations ###
+
+  #### class methods ####
+
+  #### object methods ###
+
+end
