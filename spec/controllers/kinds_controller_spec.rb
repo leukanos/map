@@ -42,7 +42,7 @@ RSpec.describe KindsController, type: :controller do
   end
 
   describe 'when user is not logged in' do
-    it 'redirect to new session paht'do
+    it 'redirect to new session path'do
       get :index
       expect(response).to redirect_to new_user_session_path
     end
